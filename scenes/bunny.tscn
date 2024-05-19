@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://sg75rsbt23tt"]
+
+[ext_resource type="Script" path="res://scripts/Bunny.gd" id="1_ks88i"]
+[ext_resource type="Texture2D" uid="uid://dtg6fxwnjyn46" path="res://assets/sprites/Bunny/Idle (34x44).png" id="2_edgbx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byo2k"]
+atlas = ExtResource("2_edgbx")
+region = Rect2(0, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8am1t"]
+atlas = ExtResource("2_edgbx")
+region = Rect2(34, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57ymk"]
+atlas = ExtResource("2_edgbx")
+region = Rect2(68, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34gtn"]
+atlas = ExtResource("2_edgbx")
+region = Rect2(102, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avtyb"]
+atlas = ExtResource("2_edgbx")
+region = Rect2(136, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsoa6"]
+atlas = ExtResource("2_edgbx")
+region = Rect2(170, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vs38w"]
+atlas = ExtResource("2_edgbx")
+region = Rect2(204, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7s3w"]
+atlas = ExtResource("2_edgbx")
+region = Rect2(238, 0, 34, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hulce"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byo2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8am1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57ymk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34gtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avtyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsoa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vs38w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7s3w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hgl8"]
+height = 28.0
+
+[node name="Bunny" type="CharacterBody2D"]
+script = ExtResource("1_ks88i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -8)
+sprite_frames = SubResource("SpriteFrames_hulce")
+autoplay = "default"
+frame = 3
+frame_progress = 0.629919
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2hgl8")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(18, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-18, 0)
