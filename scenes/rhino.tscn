@@ -86,27 +86,27 @@ region = Rect2(468, 0, 52, 34)
 atlas = ExtResource("2_wv4bk")
 region = Rect2(520, 0, 52, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxf7x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfpww"]
 atlas = ExtResource("5_2ahoq")
 region = Rect2(0, 0, 52, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ta665"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8else"]
 atlas = ExtResource("5_2ahoq")
 region = Rect2(52, 0, 52, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4vi1g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nma2p"]
 atlas = ExtResource("5_2ahoq")
 region = Rect2(104, 0, 52, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3cxs1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfwio"]
 atlas = ExtResource("5_2ahoq")
 region = Rect2(156, 0, 52, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v2jlj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_il4d8"]
 atlas = ExtResource("5_2ahoq")
 region = Rect2(208, 0, 52, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cvtha"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb1ub"]
 atlas = ExtResource("5_2ahoq")
 region = Rect2(260, 0, 52, 34)
 
@@ -189,22 +189,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nxf7x")
+"texture": SubResource("AtlasTexture_cfpww")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ta665")
+"texture": SubResource("AtlasTexture_8else")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4vi1g")
+"texture": SubResource("AtlasTexture_nma2p")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3cxs1")
+"texture": SubResource("AtlasTexture_xfwio")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v2jlj")
+"texture": SubResource("AtlasTexture_il4d8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cvtha")
+"texture": SubResource("AtlasTexture_wb1ub")
 }],
 "loop": true,
 "name": &"run",
@@ -222,11 +222,21 @@ script = ExtResource("1_63tfh")
 position = Vector2(0, -3)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_hg0l8")
-animation = &"hit"
+animation = &"run"
 autoplay = "idle"
-frame = 4
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_gjcmi")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -3)
+rotation = 3.14159
+scale = Vector2(1, -1)
+target_position = Vector2(-27, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -3)
+rotation = 3.14159
+scale = Vector2(1, -1)
+target_position = Vector2(28, 0)
