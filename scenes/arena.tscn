@@ -749,17 +749,19 @@ texture = ExtResource("1_equ1b")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cfk8h")
 
-[node name="arena" type="Node2D"]
+[node name="main" type="Node2D"]
 
-[node name="Bunny" parent="." instance=ExtResource("1_471l6")]
+[node name="Arena" type="Node2D" parent="."]
+
+[node name="Bunny" parent="Arena" instance=ExtResource("1_471l6")]
 position = Vector2(77, -18)
 
-[node name="Rhino" parent="." instance=ExtResource("2_shuuo")]
+[node name="Rhino" parent="Arena" instance=ExtResource("2_shuuo")]
 position = Vector2(-112, -11)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Arena"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="Arena"]
 position = Vector2(0, 32)
 tile_set = SubResource("TileSet_42yf1")
 format = 2
